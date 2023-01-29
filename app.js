@@ -109,7 +109,7 @@ const connectSrcUrls = [
     "https://events.mapbox.com/",
 ];
 const fontSrcUrls = [];
-const cloudinary_val = process.env.CLOUDINARY_VAL
+const cloudinary_val = process.env.CLOUDINARY_CLOUD_NAME
 app.use(
     helmet.contentSecurityPolicy({
         directives: {
