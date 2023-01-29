@@ -6,17 +6,17 @@ const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 const ejsMate = require('ejs-mate');
-const ExpressError = require('../utils/ExpressError');
+const ExpressError = require('./utils/ExpressError');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
-const User = require('../models/user');
+const User = require('./models/user');
 
-const userRoutes = require('../routes/users');
-const campgroundRoutes = require('../routes/campgrounds');
-const reviewRoutes = require('../routes/reviews');
+const userRoutes = require('./routes/users');
+const campgroundRoutes = require('./routes/campgrounds');
+const reviewRoutes = require('./routes/reviews');
 
 const mongoSanitize = require('express-mongo-sanitize');
 const helmet = require('helmet');
@@ -39,11 +39,11 @@ const app = express();
 app.engine('ejs', ejsMate);
 
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, '../views'));
+app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(mongoSanitize());
 const secret = process.env.SECRET || 'thisshouldbeabettersecret!';
 const store = new MongoDBStore({
