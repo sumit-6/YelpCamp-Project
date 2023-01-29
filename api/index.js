@@ -6,17 +6,17 @@ const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 const ejsMate = require('ejs-mate');
-const ExpressError = require('./utils/ExpressError');
+const ExpressError = require('../utils/ExpressError');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
-const User = require('./models/user');
+const User = require('../models/user');
 
-const userRoutes = require('./routes/users');
-const campgroundRoutes = require('./routes/campgrounds');
-const reviewRoutes = require('./routes/reviews');
+const userRoutes = require('../routes/users');
+const campgroundRoutes = require('../routes/campgrounds');
+const reviewRoutes = require('../routes/reviews');
 
 const mongoSanitize = require('express-mongo-sanitize');
 const helmet = require('helmet');
