@@ -109,6 +109,7 @@ const connectSrcUrls = [
     "https://events.mapbox.com/",
 ];
 const fontSrcUrls = [];
+const cloudinary_val = process.env.CLOUDINARY_VAL
 app.use(
     helmet.contentSecurityPolicy({
         directives: {
@@ -122,7 +123,7 @@ app.use(
                 "'self'",
                 "blob:",
                 "data:",
-                "https://res.cloudinary.com/dk26fyzkl/", //SHOULD MATCH YOUR CLOUDINARY ACCOUNT! 
+                `https://res.cloudinary.com/${cloudinary_val}/`, //SHOULD MATCH YOUR CLOUDINARY ACCOUNT! 
                 "https://images.unsplash.com/",
             ],
             fontSrc: ["'self'", ...fontSrcUrls],
@@ -165,7 +166,7 @@ app.use((err, req, res, next) => {
     res.status(statusCode).render('error', {err});
 })
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log(`Serving at http://localhost:${port}`);
 })
