@@ -7,6 +7,30 @@
     <title>YelpCamp</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        body{
+            width: 100%;
+            height: 100%;
+            color: #fff;
+            background:  linear-gradient(-45deg, #ecb211, #EE7752, #E73C7E, #23A6D5, #23D5AB, #ecb211);
+            background-size: 400% 400%;
+            position: relative;
+            animation: change 10s ease-in-out infinite;
+        }
+
+
+        @keyframes change{
+            0%{
+                background-position: 0% 50%;
+            }
+            50%{
+                background-position: 100% 50%;
+            }
+            100%{
+                background-position: 0% 50%;
+            }
+        }
+    </style>
 
 </head>
 <body class="d-flex flex-column vh-100">
